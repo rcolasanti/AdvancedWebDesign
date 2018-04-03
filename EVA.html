@@ -106,7 +106,7 @@
     }
 	
 #searchInput {
-  width: 100%;
+  width: 95%;
   margin:5px;
   font-size: 16px;
   padding: 12px 20px 12px 0px;
@@ -131,9 +131,9 @@
 <div class="mybox" id="EVA">
 	<h3>Extra-vehicular Activity (EVA) for USA and USSR/Russia</h3>
 	<p>Activities done by an astronaut or cosmonaut outside a spacecraft beyond the Earth's appreciable atmosphere.</p>
+	<input type="text" id="searchInput" onkeyup="findFunction()" placeholder="Search for crew.." title="Type in a name">
 </div>
 	
-<input type="text" id="searchInput" onkeyup="findFunction()" placeholder="Search for crew.." title="Type in a name">
 <table id="walks"></table>
 
 <script>
