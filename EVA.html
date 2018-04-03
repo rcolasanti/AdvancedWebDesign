@@ -59,21 +59,21 @@
       color: black;
     }
     
-    #users {
+    #walks {
         border-collapse: collapse;
         width: 100%;
     }
 
-    #users td, #customers th {
+    #walks td, #customers th {
         border: 1px solid #ddd;
         padding: 8px;
     }
 
-    #users tr:nth-child(even){background-color: #f2f2f2;}
+    #walks tr:nth-child(even){background-color: #f2f2f2;}
 
-    #users tr:hover {background-color: #ddd;}
+    #walks tr:hover {background-color: #ddd;}
 
-    #users th {
+    #walks th {
         padding-top: 12px;
         padding-left: 12px;
         padding-bottom: 12px;
@@ -97,7 +97,7 @@
 </div>
 
 
-<div id="evas"></div>
+<table id="walks"></table>
 <script>
 var request = new XMLHttpRequest();
 request.open('GET','Extra-vehicular_Activity__EVA__-_US_and_Russia.csv', true);
@@ -120,22 +120,21 @@ request.send();
    
 function parseTxt(text){
   var rows=text.split('\n');
-  var table="<table id='users'><tr>"
+  var table="<tr>"
   var cols=rows[0].split(',');
-  for(var i=0; i<cols.length;i++){
+  for(var i=0; i<cols.length-1;i++){
     table+="<th>"+cols[i]+"</th>"
   }
   table+="</tr>"  
   for(var i = 1; i<rows.length;i++){
       table+="<tr>"  
       cols=rows[i].split(',');
-      for(var j=0; j<cols.length;j++){
+      for(var j=0; j<cols.length-1;j++){
             table+="<td>"+cols[j]+"</td>"
       }
       table+="</tr>"  
-  }
-  table+="</table>"    
-  document.getElementById("evas").innerHTML = table;
+  }    
+  document.getElementById("walks").innerHTML = table;
 }
 </script>
 </body>
