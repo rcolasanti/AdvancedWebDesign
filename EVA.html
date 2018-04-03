@@ -155,12 +155,12 @@ function parseTxt(text){
   }
   table+="</tr>"  
   for(var i = 1; i<rows.length;i++){
-      table+="<tr class="tooltip">"  
+      table+="<tr class='tooltip'>"  
       cols=rows[i].split(',');
       for(var j=0; j<6;j++){
             table+="<td>"+cols[j]+"</td>"
       }
-      table+="<span class="tooltiptext">Tooltip text</span></tr>"  
+      table+="<span class='tooltiptext'>Tooltip text</span></tr>"  
   }    
   document.getElementById("walks").innerHTML = table;
 }
