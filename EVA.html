@@ -87,7 +87,7 @@ request.open('GET','Extra-vehicular_Activity__EVA__-_US_and_Russia.csv', true);
 request.onload = function() {
   if (request.status >= 200 && request.status < 400) {
     // Success!
-    console.log(data)
+    console.log(request.responseText)
   } else {
     console.log("We reached our target server, but it returned an error");
 
