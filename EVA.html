@@ -36,7 +36,11 @@
       font-size: 25px;
       letter-spacing: 10px;
     }
-
+    .footer {
+      overflow: hidden;
+      background-color: rgba(3,3,3,0.9);
+      width: 100%;
+    }
     .navbar {
       overflow: hidden;
       background-color: rgba(3,3,3,0.9);
@@ -134,7 +138,11 @@
 </div>
 	
 <table id="walks"></table>
-
+<footer>
+  <p>Posted by: Ric Colasanti</p>
+  <p>Contact information: <a href="mailto:developer.colasanti@gmail.com">
+  developer.colasanti@gmail.com</a>.</p>
+</footer>
 <script>
 var request = new XMLHttpRequest();
 request.open('GET','Extra-vehicular_Activity__EVA__-_US_and_Russia.csv', true);
