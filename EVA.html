@@ -87,7 +87,7 @@ request.open('GET','Extra-vehicular_Activity__EVA__-_US_and_Russia.csv', true);
 request.onload = function() {
   if (request.status >= 200 && request.status < 400) {
     // Success!
-    console.log(request.responseText)
+    parseTxt(request.responseText)
   } else {
     console.log("We reached our target server, but it returned an error");
 
@@ -99,6 +99,26 @@ request.onerror = function() {
 };
 
 request.send();
+   
+function parseTxt(text){
+  var rows=text.split('\n');
+  var table="<table id='users'><tr>"
+  var cols=rows[0].split(',');
+  for(var i=0; i<cols.length;i++){
+    table+="<th>"+cols[i]+"</th>"
+  }
+  table+="<\tr>"  
+  for(var i = 1; i<row.length;i++){
+      table+="<tr>"  
+      cols=rows[i].split(',');
+      for(var j=0; j<cols.length;j++){
+            table+="<td>"+cols[j]+"</td>"
+      }
+      table+="</tr>"  
+  }
+  table+="</table>"    
+  document.getElementById("evas").innerHTML = table;
+}
 </script>
 </body>
 </html>
