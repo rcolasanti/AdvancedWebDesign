@@ -58,7 +58,10 @@
       background: #ddd;
       color: black;
     }
-
+    .fixed-table-container {
+      height: 400px;
+      padding-top: 30px; /* height of header */
+    }
     #walks {
         border-collapse: collapse;
         width: 100%;
@@ -101,8 +104,9 @@
 </div>
 
 
-
+<div class="fixed-table-container">
  <table id="walks"></table>
+</div>
 
 <script>
 var request = new XMLHttpRequest();
