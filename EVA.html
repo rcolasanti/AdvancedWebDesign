@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EVA</title>	
 <style>
     body{
         font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -133,7 +134,7 @@
 </div>
 
 <table id="walks"></table>
-<input type="text" id="searchInput" onkeyup="mfindFunction()" placeholder="Search for names.." title="Type in a name">
+<input type="text" id="searchInput" onkeyup="findFunction()" placeholder="Search for names.." title="Type in a name">
 
 <script>
 var request = new XMLHttpRequest();
@@ -175,6 +176,23 @@ function parseTxt(text){
   document.getElementById("walks").innerHTML = table;
 }
 
+function findFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("searchInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("walks");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}	
 </script>
 </body>
 </html>
