@@ -58,6 +58,14 @@
       background: #ddd;
       color: black;
     }
+    table tbody, table thead{
+        display: block;
+    }
+
+    table tbody {
+        overflow: auto;
+        height: 400px;
+    }
     
     #walks {
         border-collapse: collapse;
@@ -121,12 +129,12 @@ request.send();
    
 function parseTxt(text){
   var rows=text.split('\n');
-  var table="<tr>"
+  var table="<thead><tr>"
   var cols=rows[0].split(',');
   for(var i=0; i<cols.length-1;i++){
     table+="<th>"+cols[i]+"</th>"
   }
-  table+="</tr>"  
+  table+="</tr></thead><tbody>"  
   for(var i = 1; i<rows.length;i++){
       table+="<tr>"  
       cols=rows[i].split(',');
@@ -134,7 +142,8 @@ function parseTxt(text){
             table+="<td>"+cols[j]+"</td>"
       }
       table+="</tr>"  
-  }    
+  }   
+  table+="<tbody>"
   document.getElementById("walks").innerHTML = table;
 }
 </script>
