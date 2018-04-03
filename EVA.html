@@ -58,13 +58,13 @@
       background: #ddd;
       color: black;
     }
-    table tbody, table thead{
-        display: block;
-    }
-
-    table tbody {
-        overflow: auto;
-        height: 400px;
+    thead{ 
+        position: -webkit-sticky;
+        position: -moz-sticky;
+        position: -ms-sticky;
+        position: -o-sticky;
+        position: sticky;
+        top: 0px;
     }
     
     #walks {
