@@ -84,17 +84,17 @@
 </style>
 </head>
 <body>
+<div class="parallax">
+  <div class="caption">
+    <span class="border">SCROLL DOWN</span>
+  </div>
+</div>
 
 <div class="navbar">
   <a href="#home">EVA</a>
   <a href="#evas">Space walks</a>
 </div>
 <div id="home"></div>
-<div class="parallax">
-  <div class="caption">
-    <span class="border">SCROLL DOWN</span>
-  </div>
-</div>
 
 
 <table id="walks"></table>
@@ -129,7 +129,7 @@ function parseTxt(text){
   for(var i = 1; i<rows.length;i++){
       table+="<tr>"  
       cols=rows[i].split(',');
-      for(var j=0; j<cols.length-1;j++){
+      for(var j=0; j<6;j++){
             table+="<td>"+cols[j]+"</td>"
       }
       table+="</tr>"  
