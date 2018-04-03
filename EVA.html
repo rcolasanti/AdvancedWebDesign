@@ -132,9 +132,9 @@
 	<h3>Extra-vehicular Activity (EVA) for USA and USSR/Russia</h3>
 	<p>Activities done by an astronaut or cosmonaut outside a spacecraft beyond the Earth's appreciable atmosphere.</p>
 </div>
-
-<table id="walks"></table>
+	
 <input type="text" id="searchInput" onkeyup="findFunction()" placeholder="Search for names.." title="Type in a name">
+<table id="walks"></table>
 
 <script>
 var request = new XMLHttpRequest();
@@ -183,7 +183,7 @@ function findFunction() {
   table = document.getElementById("walks");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
+    td = tr[i].getElementsByTagName("td")[2];
     if (td) {
       if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
