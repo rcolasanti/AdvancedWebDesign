@@ -103,7 +103,7 @@ function parseTxt(text){
   for(var i=0; i<cols.length;i++){
     table+="<th>"+cols[i]+"</th>"
   }
-  table+="<\tr>"  
+  table+="</tr>"  
   for(var i = 1; i<rows.length;i++){
       table+="<tr>"  
       cols=rows[i].split(',');
