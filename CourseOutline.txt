@@ -1,0 +1,36 @@
+An overview of HTML, CSS, JavaScript will be given before introducing some of today's most modern web development frameworks such as Bootstrap and CakePHP.  Students attending the course should have a good understanding of HTML and PHP.
+
+
+General structure split the course in to two
+1) wed development with vanilla CSS and PHP. Mirror some of the output of Boostatrap and CAKEPHP
+    What is meant by responsive web pages
+    What is meant by dynamic wbpages
+2) Use Content mamgement and CSC lib to accomplish  similar 
+
+Setup Apache2 php
+    Sugest use of raspbeypi zero w or any Raspbery pi
+Use Git and Github
+    Set up  Github hosted webpage
+    
+Lesson one set up page to send their details to a PHP serve do this with coding cards 
+    Each person get a line section of the page to send data
+    They have to get in groups that make the complete page
+    
+    write the page using notepad
+    run page
+    
+    save page to Git hub
+    
+    Run page from Git hub.
+
+
+
+
+responsive web page layout using HTML and Cascading Style Sheets (HTML5/CSS3)
+web page formatting using HTML and Cascading Style Sheets (HTML5/CSS3)
+an introduction to providing client-side interactivity using JavaScript (AJAX and JQuery)
+use of integrated development environments for web page development (Aptana Studio, Netbeans)
+site management tools (FTP clients)
+becoming familiar with MVC/PHP frameworks using CakePHP
+becoming familiar with CSS, HTML, JS framework using Bootstrap
+an introduction to server-side functionality using CakePHP and MySQL (database driven web pages)
