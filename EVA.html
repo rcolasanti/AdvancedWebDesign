@@ -103,7 +103,16 @@
         background-color:#cccccc;
         border-radius: 8px;
     }
-
+	
+#searchInput {
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
 </style>
 </head>
 <body>
@@ -124,6 +133,7 @@
 </div>
 
 <table id="walks"></table>
+<input type="text" id="searchInput" onkeyup="mfindFunction()" placeholder="Search for names.." title="Type in a name">
 
 <script>
 var request = new XMLHttpRequest();
@@ -164,6 +174,7 @@ function parseTxt(text){
   table+="<tbody>"
   document.getElementById("walks").innerHTML = table;
 }
+
 </script>
 </body>
 </html>
