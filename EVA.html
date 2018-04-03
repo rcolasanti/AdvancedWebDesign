@@ -58,18 +58,7 @@
       background: #ddd;
       color: black;
     }
-    thead{ 
-        position: -webkit-sticky;
-        position: -moz-sticky;
-        position: -ms-sticky;
-        position: -o-sticky;
-        position: sticky;
-        top: 0px;
-    }
-    tbody{
-        height: 400px;
-        overflow-y: scroll;
-    }
+    
     #walks {
         border-collapse: collapse;
         width: 100%;
@@ -92,6 +81,11 @@
         background-color: #7AA9D5;
         color: white;
     }
+    
+   .container {
+        overflow-y: auto;
+        height: 400px;
+    } 
 </style>
 </head>
 <body>
@@ -108,8 +102,9 @@
 </div>
 
 
-
-<table id="walks"></table>
+<div class="contaner">
+    <table id="walks"></table>
+</div>
 <script>
 var request = new XMLHttpRequest();
 request.open('GET','Extra-vehicular_Activity__EVA__-_US_and_Russia.csv', true);
