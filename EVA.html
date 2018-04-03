@@ -96,7 +96,13 @@
 	    width: 100%
     }
 
-  
+.mybox{
+        float: left;
+        padding:5px;
+        margin:15px;
+        background-color:#7AA9D5;
+        border-radius: 8px;
+    }
 
 </style>
 </head>
@@ -112,11 +118,12 @@
   <a href="#home">EVA</a>
   <a href="#walks">Space walks</a>
 </div>
+<div class="mybox">
+	<h3>Extra-vehicular Activity (EVA) - US and Russia</h3>
+	<p>Activities done by an astronaut or cosmonaut outside a spacecraft beyond the Earth's appreciable atmosphere</p>
+</div>
 
-<h4>Extra-vehicular Activity (EVA) - US and Russia</h4>
-<p>Activities done by an astronaut or cosmonaut outside a spacecraft beyond the Earth's appreciable atmosphere</p>
 <table id="walks"></table>
-
 
 <script>
 var request = new XMLHttpRequest();
