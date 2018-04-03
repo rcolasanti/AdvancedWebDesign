@@ -81,33 +81,6 @@
         background-color: #7AA9D5;
         color: white;
     }
-    
-    /* Tooltip container */
-    .tooltip {
-        position: relative;
-        display: inline-block;
-        border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
-    }
-
-    /* Tooltip text */
-    .tooltip .tooltiptext {
-        visibility: hidden;
-        width: 120px;
-        background-color: black;
-        color: #fff;
-        text-align: center;
-        padding: 5px 0;
-        border-radius: 6px;
-
-        /* Position the tooltip text - see examples below! */
-        position: absolute;
-        z-index: 1;
-    }
-
-    /* Show the tooltip text when you mouse over the tooltip container */
-    .tooltip:hover .tooltiptext {
-        visibility: visible;
-    }
 </style>
 </head>
 <body>
@@ -155,10 +128,10 @@ function parseTxt(text){
   }
   table+="</tr>"  
   for(var i = 1; i<rows.length;i++){
-      table+="<tr class='tooltip'>"  
+      table+="<tr>"  
       cols=rows[i].split(',');
       for(var j=0; j<6;j++){
-            table+="<td>"+cols[j]+"<span class='tooltiptext'>Tooltip text</span></td>"
+            table+="<td>"+cols[j]+"/td>"
       }
       table+="</tr>"  
   }    
