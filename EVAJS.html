@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EVA</title>	
+<style>
+    body{
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    }
+    .parallax {
+        /* The image used */
+        background-image: url("eva.jpg");
+
+        /* Set a specific height */
+        min-height: 1000px; 
+
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .caption {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      text-align: center;
+      color: #000;
+    }
+
+    .caption span.border {
+      background-color: #333;
+      color: #fff;
+      padding: 18px;
+      font-size: 25px;
+      letter-spacing: 10px;
+    }
+    
+    footer {
+      overflow: hidden;
+      background-color: rgba(3,3,3,0.9);
+      width: 100%;
+      color: #dddddd;    
+      bottom: 0;
+      padding: 16px;
+    }
+	
+    .navbar {
+      overflow: hidden;
+      background-color: rgba(3,3,3,0.9);
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+
+    .navbar a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .navbar a:hover {
+      background: #ddd;
+      color: black;
+    }
+    
+    #walks {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    #walks td, th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #walks tr:nth-child(even){background-color: #f2f2f2;}
+
+    #walks tr:hover {background-color: #ddd;}
+
+    #walks th {
+        padding-top: 12px;
+        padding-left: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #7AA9D5;
+        color: white;
+	//width:16%
+    }
+ 
+   .mybox{
+	max-width:100%;
+        padding:25px;
+        margin:0px;
+        background-color:#cccccc;
+    }
+	
+#searchInput {
+  width: 97%;
+  margin:5px;
+  font-size: 16px;
+  padding: 12px 20px 12px 20px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+  border-radius: 8px;	
+}
+</style>
+</head>
+<body>
+<div id="home"></div>
+<div class="parallax">
+  <div class="caption">
+    <span class="border">SCROLL DOWN</span>
+  </div>
+</div>
+
+<div class="navbar">
+  <a href="#home">EVA</a>
+  <a href="#EVA">Space walks</a>
+</div>
+<div class="mybox" id="EVA">
+	<h3>Extra-vehicular Activity (EVA) for USA and USSR/Russia</h3>
+	<p>Activities done by an astronaut or cosmonaut outside a spacecraft beyond the Earth's appreciable atmosphere.</p>
+	<input type="text" id="searchInput" onkeyup="findFunction()" placeholder="Search for crew.." title="Type in a name">
+</div>
+	
+<table id="walks"></table>
+<footer>
+  <p>Posted by: Ric Colasanti Contact information: developer.colasanti@gmail.com.</p>
+</footer>
+<script>
+var request = new XMLHttpRequest();
+request.open('GET','Extra-vehicular_Activity__EVA__-_US_and_Russia.csv', true);
+
+request.onload = function() {
+  if (request.status >= 200 && request.status < 400) {
+    // Success!
+    parseTxt(request.responseText)
+  } else {
+    console.log("We reached our target server, but it returned an error");
+
+  }
+};
+
+request.onerror = function() {
+  console.log("There was a connection error of some sort");
+};
+
+request.send();
+   
+function parseTxt(text){
+  var rows=text.split('\n');
+  var table="<thead><tr>"
+  var cols=rows[0].split(',');
+  for(var i=0; i<cols.length-1;i++){
+    table+="<th>"+cols[i]+"</th>"
+  }
+  table+="</tr></thead><tbody>"  
+  for(var i = 1; i<rows.length;i++){
+      table+="<tr>"  
+      cols=rows[i].split(',');
+      for(var j=0; j<6;j++){
+            table+="<td>"+cols[j]+"</td>"
+      }
+      table+="</tr>"  
+  }   
+  table+="<tbody>"
+  document.getElementById("walks").innerHTML = table;
+}
+
+function findFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("searchInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("walks");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[2];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}	
+</script>
+</body>
+</html>
